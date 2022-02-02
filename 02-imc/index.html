@@ -7,8 +7,11 @@
         <link rel="stylesheet" href="./css/style.css" />
         <link rel="stylesheet" href="./css/input-text.css" />
         <link rel="stylesheet" href="./css/button.css" />
-        <script src= '../02-imc/js/main.js' defer></script> 
+        <link rel="stylesheet" href="css/input-range.css">
+        <script src= 'js/main.js' defer  type="module"></script> 
+       
         <!-- DEFER É um atributo que carrega o HTML e o JS, em ordem, trazendo a vantagem de velocidade -->
+        <!-- O tipo modulo tipy="modulo" foi colocado por causa da exportação e importação  -->
     </head>
     <body>
         <main>
@@ -16,17 +19,27 @@
                 <div class="title">Calculadora - IMC</div>
                 <form id="formulario">
                     <div class="input">
-                        <label>Nome:</label>
+                        <label> Nome:</label>
                         <input type="text" id="nome" required />
                     </div>
-                    <div class="input">
+                    <div class="range">
+
                         <label>Altura:</label>
-                        <input type="number" id="altura" required step="any"/>
+
+                        <span id="valor-altura" data-unidade="m" > 1.50</span>
+
+                        <input type="range" id="altura" min="0" max="3" step="0.01" />
+
                     </div>
-                    <div class="input">
+                    <div class="range">
+
                         <label>Peso:</label>
-                        <input type="number" id="peso" required step="any" />
+
+                        <span id="valor-peso" data-unidade="kg"> 65</span>
+
+                        <input type="range" id="peso" min="0" max="300" step="0.1"  />
                     </div>
+                   
                 </form>
                 <button id="calcular" class="button template">Calcular</button>
                 <div class="result" id="resultado"></div>
